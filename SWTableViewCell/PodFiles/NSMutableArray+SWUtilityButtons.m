@@ -46,6 +46,34 @@
     [self addObject:button];
 }
 
+- (void)sw_addSwitch:(UISwitch *)aSwitch backgroundColor:(UIColor *)aBackgroundColor {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.backgroundColor = aBackgroundColor;
+    [button addSubview:aSwitch];
+    
+    [aSwitch setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    [button addConstraint:[NSLayoutConstraint
+                                          constraintWithItem:button
+                                          attribute:NSLayoutAttributeCenterY
+                                          relatedBy:NSLayoutRelationEqual
+                                          toItem:aSwitch
+                                          attribute:NSLayoutAttributeCenterY
+                                          multiplier:1.0
+                                          constant:0.0]];
+    
+    [button addConstraint:[NSLayoutConstraint
+                           constraintWithItem:button
+                           attribute:NSLayoutAttributeCenterX
+                           relatedBy:NSLayoutRelationEqual
+                           toItem:aSwitch
+                           attribute:NSLayoutAttributeCenterX
+                           multiplier:1.0
+                           constant:0.0]];
+    
+    [self addObject:button];
+}
+
 @end
 
 

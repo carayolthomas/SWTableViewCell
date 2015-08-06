@@ -84,7 +84,7 @@ static NSString * const kTableViewCellContentView = @"UITableViewCellContentView
     self.cellScrollView.showsHorizontalScrollIndicator = NO;
     self.cellScrollView.scrollsToTop = NO;
     self.cellScrollView.scrollEnabled = YES;
-    
+    self.contentView.bounds = CGRectMake(0, 0, 99999, 99999);
     _contentCellView = [[UIView alloc] init];
     [self.cellScrollView addSubview:_contentCellView];
     
